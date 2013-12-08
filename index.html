@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Battlelog JSON Parser</title>
+ 
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+ 
+</head>
+ 
+<body>
+ 
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+$('#url').val("")
+$('button').click(function(){
+if($('#url').val() !== ""){
+	var it = $('#url').val();
+	if(it.indexOf("http://") !== -1){
+		it = it.substring(7);
+	}
+	$("#output").html(it);
+}else{
+	$("#output").html("You didn't enter anything, silly.");
+}
+});
+});
+ 
+</script>
+<p>
+Battlelog JSON Parser 0.0.3<br/>
+Enter a BattleReport URL... (BF4 PC Only)
+</p>
+<input type="text" id="url"  />
+<button type="button">Punch it.</button>
+<p id="output">
+</p>
+ 
+</body>
+</html>
